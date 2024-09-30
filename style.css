@@ -160,6 +160,7 @@ span {
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -177,7 +178,6 @@ span {
 .about-img img {
     width: 40vw;
     margin-right: 5vw;
-
 }
 
 .heading {
@@ -232,8 +232,6 @@ span {
   max-height: 600px;
 }
 
-
-
 .services-container .services-box:hover {
     border-color: var(--main-color);
     transform: scale(1.02);
@@ -251,6 +249,11 @@ span {
 .services-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
+}
+
+.services-box .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
 }
 
 .portfolio {
@@ -410,7 +413,6 @@ span {
     color: var(--second-bg-color);
 }
 
-
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
     html {
@@ -486,7 +488,7 @@ span {
         flex-direction: column-reverse;
     }
 
-    .about img {
+    .about-img img {
         width: 70vw;
         margin-top: 4rem;
     }
@@ -499,6 +501,7 @@ span {
 }
 
 @media (max-width: 450px) {
+
     html {
         font-size: 50%;
     }
@@ -525,41 +528,17 @@ span {
     }
 }
 
+/* Expand Button */
 .expand-btn {
   transition: all 0.3s ease; /* Transición suave */
-}
-
-/* Estilo del botón cuando se expande */
-.expand-btn.expanded {
-  background-color: #5a5aff; /* Cambia el color de fondo */
-  color: white
-}
-
-/* Estilos para la expansión del texto en 'Sobre mí' */
-.about-content .text-container {
-  max-height: 150px; /* Altura inicial para mostrar parte del texto */
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.about-content .text-container.expanded {
-  max-height: 1000px; /* Altura suficiente para mostrar todo el texto */
-}
-
-.read-more-btn {
-  margin-top: 15px;
-  background: #5a5aff;
+  margin-top: 25px;
   color: #fff;
-  padding: 10px 30px;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 1em;
-  font-weight: 500;
   transition: background 0.3s;
 }
 
-.read-more-btn:hover {
+.expand-btn:hover {
   background: #4040ff;
 }
 
@@ -574,19 +553,7 @@ span {
   max-height: 1000px; /* Debe ser lo suficientemente grande para mostrar todo el texto */
 }
 
-.expand-btn {
-margin-top: 25px;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.expand-btn:hover {
-  background: #4040ff;
-}
-
-
+/* Servicios */
 .services-container .services-box {
   flex: 1 1 30rem;
   padding: 3rem 2rem 4rem;
