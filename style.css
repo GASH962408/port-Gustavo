@@ -86,8 +86,7 @@ section {
 }
 
 .home-img img {
-    width: 29vw;
-    animation: floatImage 4s ease-in-out infinite;
+    width: 20vw;
     margin-left: 10vw;
 }
 
@@ -104,6 +103,13 @@ section {
         transform: translateY(0);
     }
 }
+
+.home-content {
+  max-width: 60%; /* Disminuir el tamaño para mover el texto */
+  margin-right: auto; /* Mover todo el contenido hacia la izquierda */
+  padding-left: 5rem; /* Ajusta este valor para más desplazamiento */
+}
+
 
 .home-content h3 {
     font-size: 3.2rem;
@@ -567,4 +573,180 @@ span {
     flex-direction: column;
     justify-content: space-between;
     color: #fff; /* Para que el texto se vea mejor en la imagen */
+}
+
+
+/* Sección del Carrusel Circular */
+.carousel-section {
+  padding: 10rem 0;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.conteneur {
+  width: 50rem;
+  margin: auto;
+  position: relative;
+}
+
+.circle {
+  width: 40rem;
+  height: 40rem;
+  border: 8px solid var(--main-color);
+  border-radius: 50%;
+  position: relative;
+  animation: animation 170s infinite linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle:hover {
+  animation-play-state: paused;
+}
+
+/* Estilos para los puntos con íconos */
+.point_general {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--second-bg-color);
+  border: 0.1rem solid var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.point_general img.icon {
+  width: 5rem;
+  height: 5rem;
+  transition: transform 0.3s ease;
+}
+
+.point_general:hover img.icon {
+  transform: scale(1.2);
+}
+
+
+
+.point_general:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Asegura que el círculo se expanda desde el centro del punto */
+  content: '';
+  background: var(--main-color);
+  opacity: 0;
+  border-radius: 50%;
+  transition: all .4s ease;
+}
+
+.point_general:hover:after {
+  opacity: 0.8;
+  width: 8rem; /* Tamaño que coincide con el hover */
+  height: 8rem; /* Tamaño que coincide con el hover */
+  top: 50%; /* Mantener el círculo centrado verticalmente */
+  left: 50%; /* Mantener el círculo centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Centrar el círculo en el punto */
+}
+
+
+.texte {
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: -5rem;
+  left: -5rem;
+  width: 11rem;
+  height: 11rem;
+  overflow: hidden;
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  z-index: 10;
+  transition: opacity .2s 0s ease;
+  animation: animation2 12s infinite linear;
+}
+
+.point_general:hover .texte {
+  opacity: 1;
+  transition: opacity .4s .4s ease;
+}
+
+.circle:hover .texte {
+  animation-play-state: paused;
+}
+/* Posicionamiento de los puntos alrededor del círculo */
+.point1 {
+  transform: rotate(0deg) translate(19rem) rotate(-0deg); /* Ajustar distancia */
+}
+
+.point2 {
+  transform: rotate(45deg) translate(19rem) rotate(-45deg); /* Ajustar distancia */
+}
+
+.point3 {
+  transform: rotate(90deg) translate(19rem) rotate(-90deg); /* Ajustar distancia */
+}
+
+.point4 {
+  transform: rotate(135deg) translate(19rem) rotate(-135deg); /* Ajustar distancia */
+}
+
+.point5 {
+  transform: rotate(180deg) translate(19rem) rotate(-180deg); /* Ajustar distancia */
+}
+
+.point6 {
+  transform: rotate(225deg) translate(19rem) rotate(-225deg); /* Ajustar distancia */
+}
+
+.point7 {
+  transform: rotate(270deg) translate(19rem) rotate(-270deg); /* Ajustar distancia */
+}
+
+.point8 {
+  transform: rotate(315deg) translate(19rem) rotate(-315deg); /* Ajustar distancia */
+}
+
+@keyframes animation {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes animation2 {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}
+}
+
+/* Ajustes en la posición del carrusel */
+.carousel-wrapper {
+  position: absolute; /* Cambiar a absolute para un control más preciso */
+  top: 50%; /* Ajusta según la altura deseada */
+  left: 73%; /* Desplaza el carrusel más a la derecha */
+  transform: translate(-50%, -50%); /* Centra el carrusel en la posición especificada */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%; /* Ajuste del tamaño */
+}
+
+/* Imagen dentro del carrusel */
+.carousel-image {
+  position: absolute;
+  width: 27rem; /* Ajustar el tamaño de la imagen según lo necesites */
+  height: auto;
+  border-radius: 50%; /* Si deseas que la imagen también sea circular */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Asegura que la imagen esté en el centro */
+  z-index: 1; /* Coloca la imagen por encima de los puntos del carrusel */
 }

@@ -51,10 +51,10 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 /*==================== typed js ====================*/
 const typed = new Typed('.multiple-text', {
-    strings: ['Ingeniero Mecatrónico', 'Instrumentación y Automatización', 'Mantenimiento mecánico'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
+    strings: ['Full stack developer', 'Mechatronic Engineer', 'Challenge lover'],
+    typeSpeed: 30,
+    backSpeed: 50,
+    backDelay: 200,
     loop: true
 });
 
