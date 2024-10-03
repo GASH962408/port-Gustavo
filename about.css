@@ -4,12 +4,8 @@
 
 /* Estilos de la sección */
 .about {
-  display: flex;
-  gap: 12rem;
-  background: var(--second-bg-color);
-  padding-top: 2rem;
-  margin-top: -5rem;
-  align-items: flex-start;
+  padding: 4rem 0;
+  background: var(--second-bg-color); /* Fondo secundario */
 }
 
 .about-left {
@@ -117,4 +113,32 @@ article:hover figure img {
       object-fit: cover; /* Mantener el relleno completo */
       object-position: center top; /* Centrar la imagen y priorizar la parte superior */
   }
+}
+
+.text-container {
+  max-width: 1000px; /* Ajustar el tamaño máximo del contenedor */
+  margin: auto; /* Centrar el contenedor */
+  padding: 0 2rem; /* Espaciado interno */
+  line-height: 1.8; /* Espaciado entre líneas */
+  font-size: 1.8rem; /* Tamaño del texto */
+  margin-left: 6cqi;
+  margin-top: 2rem;
+  text-align: justify;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-8 {
+  flex: 0 0 66.6667%; /* Ocupa el 66.67% del espacio */
+  max-width: 66.6667%; /* Asegura que no se desborde */
+}
+
+.heading {
+  text-align: start;
+  font-size: 4rem;
+  margin-left: 10.5rem;
+  color: var(--text-color);
 }

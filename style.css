@@ -175,10 +175,7 @@ span {
 
 .about {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: var(--second-bg-color);
+    justify-content: space-between;
 }
 
 .about-img img {
@@ -194,6 +191,7 @@ span {
 .about-content h2 {
     text-align: left;
     line-height: 1.2;
+    margin-top: 40px;
 }
 
 .about-content h3 {
@@ -749,4 +747,179 @@ span {
   left: 50%; /* Centrar horizontalmente */
   transform: translate(-50%, -50%); /* Asegura que la imagen esté en el centro */
   z-index: 1; /* Coloca la imagen por encima de los puntos del carrusel */
+}
+
+/* Variables CSS */
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+/* Efecto Magic Card */
+.card {
+  width: 250px; /* Ajusta el tamaño de la card */
+  height: 300px; /* Ajusta la altura de la card */
+  padding: 20px; /* Espacio uniforme en todos los lados */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+
+.card:hover {
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño al hacer hover */
+}
+
+.card:hover::before,
+.card:hover::after {
+  animation: none;
+  opacity: 0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  z-index: -1;
+  border-radius: 12px; /* Bordes redondeados del borde exterior */
+  padding: 3px;
+  box-sizing: border-box;
+  background-size: 100% 100%;
+  animation: gradient-rotate 5s linear infinite; /* Animación para el borde */
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estilos para los Enlaces dentro de la Tarjeta */
+.card a.read-more {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.card a.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para las Imágenes dentro de la Tarjeta */
+.card img {
+  width: 30px; /* Mantener la proporción de la imagen */
+  height: 50px; /* Ajustar la altura de la imagen para que sea constante */
+  object-fit: cover; /* Recortar la imagen para que llene la tarjeta */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin: 0; /* Eliminar márgenes adicionales */
+  z-index: 100;
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  :root {
+    --card-height: 40vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+  .card {
+    width: var(--card-width);
+    height: var(--card-height);
+  }
+}
+
+.card figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  width: 120%;
+  height: auto;
+  border-radius: 8px; /* Ajustar las esquinas de la imagen */
+}
+
+/* Girar 90 grados los contenedores de las tarjetas 1, 2 y 3 */
+.cards-container .card:nth-child(1), /* Card 1 */
+.cards-container .card:nth-child(2), /* Card 2 */
+.cards-container .card:nth-child(3) { /* Card 3 */
+  transform: rotate(90deg); /* Girar el contenedor 90 grados */
+  display: flex; /* Asegurar que el contenido interno se mantenga */
+  justify-content: center; /* Centrar el contenido horizontalmente */
+  align-items: center; /* Centrar el contenido verticalmente */
+}
+
+/* Mantener las imágenes dentro de las tarjetas en su orientación normal */
+.cards-container .card:nth-child(1) img,
+.cards-container .card:nth-child(2) img,
+.cards-container .card:nth-child(3) img {
+  transform: rotate(-90deg); /* Revertir la rotación de las imágenes */
+}
+
+/* Ajustar el contenedor de las tarjetas para centrarlo */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cards se organicen en filas */
+  justify-content: space-evenly; /* Distribución horizontal equitativa */
+  gap: 2rem; /* Espacio entre cada card */
+}
+
+/* Ajustar el tamaño de las tarjetas y aplicar margen */
+.cards-container .card {
+  width: 250px; /* Ajusta el ancho de cada tarjeta */
+  margin: 20px; /* Espacio entre las tarjetas */
+  padding: 10px; /* Espacio interno para las tarjetas */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Asegurar que las imágenes mantengan su proporción */
+.cards-container .card img {
+  width: 120%; /* Ancho completo de la tarjeta */
+  height: 260px; /* Mantener la altura proporcional */
+  object-fit: contain; /* Ajustar la imagen dentro del contenedor sin distorsión */
 }
