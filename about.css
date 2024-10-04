@@ -21,12 +21,58 @@
   flex: 1;
 }
 
-/* Estilos para las cards */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.about .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Cambiar a 'flex-start' para mantener las columnas unidas */
+  align-items: flex-start; /* Alinear columnas al inicio */
+  gap: 30px; /* Espaciado entre columnas */
+
 }
+
+.about .col-md-8 {
+  width: 60%; /* Ancho para la columna de texto */
+}
+
+.about .col-md-4 {
+  width: 35%; /* Ajusta el ancho para las tarjetas */
+  display: flex;
+  flex-direction: column; /* Mantener las tarjetas en columna */
+  align-items: flex-start; /* Alinearlas a la izquierda del contenedor */
+}
+
+.custom-container {
+  width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea las tarjetas desde el inicio (arriba) */
+}
+
+.about .custom-container {
+  display: flex;
+  flex-direction: column; /* Alinea las tarjetas verticalmente */
+  justify-content: flex-start; /* Alinea las tarjetas desde el inicio (arriba) */
+  align-items: flex-end; /* Alinea las tarjetas a la derecha */
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.about .cover {
+  width: 300px; /* Ajusta el tamaño de las tarjetas */
+  margin-right: 30rem;
+  margin-bottom: 2rem;
+}
+
+
+/* Estilos para las cards */
+
+  .cards-container {
+    display: flex;
+    flex-direction: column; /* Cambiar a distribución vertical */
+    align-items: center; /* Centrar las tarjetas */
+    gap: 2rem; /* Espaciado entre tarjetas */
+    width: 100%; /* Asegura que las tarjetas ocupen todo el contenedor */
+    margin-top: 4rem; /* Separación superior */
+  }
 
 article {
   position: relative;
@@ -131,13 +177,8 @@ article:hover figure img {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
 }
 
-.col-md-8 {
-  flex: 55%; /* Ocupa el 55% del espacio */
-  max-width: 55%; /* Asegura que no se desborde */
-}
 
 .heading {
   text-align: start;
@@ -146,22 +187,25 @@ article:hover figure img {
   color: var(--text-color);
 }
 
+.heading-2 {
+  text-align: end;
+  font-size: 3.5rem;
+  margin-left: 19.5rem;
+  margin-top: -4.0rem;
+  margin-bottom:2.5rem;
+  color: var(--text-color);
+}
 
 /* Estilos específicos para la sección "prueba" */
 .custom-container {
   width: 704px;  /* Ajuste de ancho para el contenedor */
   height: 460px; /* Ajuste de altura */
-  position: relative; /* Ajuste para centrar los elementos */
-  margin: 50px auto; /* Centrado automático */
 }
 
 /* Estilos para cada tarjeta */
 .cover {
-  display: inline-block;
   height: 200px;
   width: 320px;
-  margin: 15px;
-  border-radius: 8px;
 }
 
 /* Estilos para el efecto atvImg */
@@ -172,40 +216,23 @@ article:hover figure img {
 }
 
 .atvImg img {
-  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(14,21,47,0.25);
 }
 
 .atvImg-container {
-  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-  transition: all 0.2s ease-out;
 }
 
 .atvImg-container.over .atvImg-shadow {
   box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4);
 }
 
-.atvImg-layers {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  transform-style: preserve-3d;
-}
-
 .atvImg-rendered-layer {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
   background-position: center;
-  background-color: transparent;
   background-size: cover;
   transition: all 0.1s ease-out;
   overflow: hidden;
@@ -232,3 +259,56 @@ article:hover figure img {
   background: linear-gradient(135deg, rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 60%);
 }
 
+
+/* -----------------------------
+   Estilos para la Sección Sobre mí
+----------------------------- */
+
+/* ... (otros estilos) ... */
+
+/* Estilos para las cards */
+
+.cards-container {
+  display: flex;
+  flex-direction: column; /* Distribución vertical */
+  align-items: center; /* Centrar las tarjetas */
+  gap: 2rem; /* Espaciado entre tarjetas */
+  width: 100%; /* Ocupa todo el contenedor */
+  margin-top: 4rem; /* Separación superior */
+}
+
+.cover.atvImg {
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.cover.atvImg img,
+.portfolio-box img,
+article figure img {
+  box-shadow: 0 2px 8px rgba(14,21,47,0.25);
+
+  /* Mejora la calidad de renderizado */
+  image-rendering: -webkit-optimize-contrast; /* Chrome/Safari */
+  image-rendering: crisp-edges; /* Otros navegadores modernos */
+  image-rendering: pixelated; /* Para imágenes pixeladas (opcional) */
+
+  /* Activa la aceleración por hardware */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+
+  /* Transición suave */
+  transition: transform 0.3s ease-out;
+}
+
+/* Efecto al pasar el cursor sobre la card */
+article:hover figure img {
+  transform: scale(1.03); /* Reducido para minimizar desenfoque */
+}
+
+.portfolio-box:hover img {
+  transform: scale(1.05); /* Reducido para minimizar desenfoque */
+}
+
+/* ... (otros estilos) ... */

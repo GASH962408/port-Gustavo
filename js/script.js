@@ -225,7 +225,7 @@ function atvImg() {
       imgCSS = 'rotateX(' + xRotate + 'deg) rotateY(' + yRotate + 'deg)';
 
       if (elem.firstChild.className.indexOf(' over') != -1) {
-          imgCSS += ' scale3d(1.05,1.05,1.05)';  // Reducir el valor de escala
+          imgCSS += ' scale3d(1.15,1.15,1.15)';  // Reducir el valor de escala
       }
       elem.firstChild.style.transform = imgCSS;
 
