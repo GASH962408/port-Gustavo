@@ -189,10 +189,17 @@ article:hover figure img {
 
 .heading-2 {
   text-align: end;
-  font-size: 3.5rem;
+  font-size: 3.0rem;
   margin-left: 19.5rem;
   margin-top: -4.0rem;
   margin-bottom:2.5rem;
+  color: var(--text-color);
+}
+
+.heading-3 {
+  font-size: 3.0rem;
+  margin-top: 2rem;
+
   color: var(--text-color);
 }
 
@@ -312,3 +319,5 @@ article:hover figure img {
 }
 
 /* ... (otros estilos) ... */
+
+
