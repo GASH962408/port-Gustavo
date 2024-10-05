@@ -826,8 +826,7 @@ span {
 }
 
 .custom-heading {
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+    font-size: 4.0rem;
     font-weight: 700;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -840,9 +839,10 @@ span {
 .custom-main {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: center;
     padding: 50px;
     font-family: 'Roboto', sans-serif;
+    gap: 8rem;
 }
 
 /* Definición Consolidada de .custom-card */
@@ -879,15 +879,7 @@ span {
     opacity: 1; /* Aumenta la opacidad al pasar el cursor */
 }
 
-.custom-card-content {
-    position: absolute; /* Posiciona el contenido dentro de .custom-card */
-    bottom: 30px; /* Ajusta la posición vertical */
-    left: 30px; /* Ajusta la posición horizontal */
-    z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
-    color: #9167b8; /* Color del texto */
-    transition: transform 0.3s ease-out, opacity 0.5s ease-in;
-    opacity: 1; /* Visibilidad inicial */
-}
+
 
 
 
@@ -913,4 +905,17 @@ span {
     100% {
         background-position: 0% 50%;
     }
+}
+
+
+/* Descripción del Texto */
+.texto-descripcion {
+  width: 100%; /* La descripción debe ocupar todo el ancho del contenedor */
+  margin-top: 2rem; /* Espacio entre la tarjeta y la descripción */
+  padding: 1rem;
+  color: #fff;
+  text-align:justify; /* Centra el texto */
+  font-size: 1.6rem;
+  margin-left: -1rem;
+  word-spacing: -0.1rem;
 }
