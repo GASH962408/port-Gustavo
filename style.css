@@ -284,11 +284,15 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    height: 250px;
+    width: auto;
 }
 
 .portfolio-box img {
     width: 100%;
+    height: auto;
     transition: .5s ease;
+    background-size: contain;
 }
 
 .portfolio-box:hover img {
@@ -310,6 +314,7 @@ span {
     padding: 0 4rem;
     transform: translateY(100%);
     transition: .5s ease;
+    text-shadow: 2px 2px 4px #000;
 }
 
 .portfolio-box:hover .portfolio-layer {
@@ -317,11 +322,11 @@ span {
 }
 
 .portfolio-layer h4 {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
 }
 
 .portfolio-layer p {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     margin: .3rem 0 1rem;
 }
 
@@ -985,9 +990,6 @@ transition: opacity 0.2s ease-out;
 .custom-card:hover img {
 opacity: 1;
 }
-
-
-
 
 /* Estilos para el contenedor de paginación */
 /* Estilos para el contenedor de paginación */
