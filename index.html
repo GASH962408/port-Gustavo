@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustavo Salazar Developer</title>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="about.css"> <!-- Enlace al archivo CSS específico de la sección 'Sobre mí' -->
+
+    <!-- simplePagination.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/simplePagination.min.css">
+
 </head>
 
 <body>
@@ -153,48 +158,65 @@
       </div>
     </section>
 
-
-    <!-- Sección Habilidades -->
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Education</span></h2>
-
-        <div class="services-container">
-            <!-- Habilidad 1 -->
-            <div class="services-box programacion">
-                <i class='bx bx-code-alt'></i>
-                <h3>Programación</h3>
-                <p>
-                    Full Stack developer con experiencia en <span class="highlight">SQL Server</span>, <span class="highlight">Workbench</span> y lenguajes como <span class="highlight">JavaScript</span>, <span class="highlight">Python</span>, <span class="highlight">React</span> y <span class="highlight">TypeScript</span>. Experto en análisis de datos con <span class="highlight">Machine Learning</span> y <span class="highlight">Deep Learning</span>, además de generación de reportes en <span class="highlight">Excel</span> (MACROS VBA).
-                </p>
-                <a href="#" class="btn">Ir a página</a>
-            </div>
-
-            <!-- Habilidad 2 -->
-            <div class="services-box electricidad">
-                <i class='bx bxs-plug'></i>
-                <h3>Electricidad e Instrumentación</h3>
-                <p>
-                    Supervisión de <span class="highlight">construcción</span> y <span class="highlight">levantamiento de malla</span>, así como <span class="highlight">levantamiento de banco ductos</span> y <span class="highlight">construcción de postes de luz</span>. Implementación de protocolos de calidad con pruebas de inspección y medición. Instalación de <span class="highlight">cableado de fuerza</span> e <span class="highlight">instrumentación</span>.
-                </p>
-                <a href="#" class="btn">Ir a página</a>
-            </div>
-
-            <!-- Habilidad 3 -->
-            <div class="services-box mecanico">
-                <i class='bx bx-cog'></i>
-                <h3>Mantenimiento Mecánico</h3>
-                <p>
-                    <span class="highlight">Creación de avisos</span> y <span class="highlight">órdenes de mantenimiento</span>, <span class="highlight">generación de reservas</span>, <span class="highlight">notificaciones</span> y <span class="highlight">mantenimiento preventivo</span> para flota auxiliar. Apoyo en mantenimientos preventivos de 250, 500, 1000 y 2000 horas, <span class="highlight">registro de trabajos diarios</span> y <span class="highlight">gestión de control de backlogs</span>.
-                </p>
-                <a href="#" class="btn">Ir a página</a>
-            </div>
+  <!-- Sección de Educación -->
+  <section id="custom-skills-section">
+    <h2 class="education">My <span>education</span></h2>
+    <div class="custom-main">
+      <!-- Tarjeta 1 -->
+      <div class="custom-skill-item">
+        <div class="custom-card">
+          <img src="./images/C2.JPG" alt="Imagen 1">
         </div>
-    </section>
+        <div class="texto-descripcion">
+          <p>Projects on Ruby on Rails and React responsive interfaces SCSS, Bootstrap. Managed PostgreSQL with Active Record, authentication using Devise and Pundit. Integrated APIs, AJAX, Hotwire, Geocoding, Chatbot AI integration and deployed applications via Git and Heroku.</p>
+        </div>
+      </div>
+      <!-- Tarjeta 2 -->
+      <div class="custom-skill-item">
+        <div class="custom-card">
+          <img src="./images/C3.JPG" alt="Imagen 2">
+        </div>
+        <div class="texto-descripcion">
+          <p>Training in JavaScript, Python, SQL, Postman, and Flask. Developed dynamic web applications, managed and queried databases, and integrated APIs using Postman. Built backend services with Flask.</p>
+        </div>
+      </div>
+      <!-- Tarjeta 3 -->
+      <div class="custom-skill-item">
+        <div class="custom-card">
+          <img src="./images/C5.JPG" alt="Imagen 3">
+        </div>
+        <div class="texto-descripcion">
+          <p>Integrates mechanics, electronics, and computer science to develop intelligent systems and automation. My Bachelor's degree equipped me with skills in robotics, control systems, and innovative product design.</p>        </div>
+      </div>
+      <!-- Tarjeta 4 -->
+      <div class="custom-skill-item">
+        <div class="custom-card">
+          <img src="./images/Python.jpg" alt="Imagen 4">
+        </div>
+        <div class="texto-descripcion">
+          <p>Proficient in Python for deep and machine learning projects, utilizing Jupyter, OpenCV, NumPy, Pandas, and various Python libraries for data analysis and model development.</p>
+        </div>
+      </div>
+      <!-- Tarjeta 5 -->
+      <div class="custom-skill-item">
+        <div class="custom-card">
+          <img src="./images/colegio.png" alt="Imagen 5">
+        </div>
+        <div class="texto-descripcion">
+          <p>Participated in collaborative software development projects, enhancing skills in team communication, version control with Git, and agile methodologies.</p>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- Contenedor de Paginación -->
+    <div id="pagination-container" class="pagination"></div>
+  </section>
+
 
     <!-- Sección Proyectos -->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Mis <span>Proyectos</span></h2>
-
+        <h2 class="project">My <span>Projects</span></h2>
         <div class="portfolio-container">
             <!-- Proyecto 1 -->
             <div class="portfolio-box">
@@ -278,40 +300,7 @@
         </form>
     </section>
 
-    <section id="custom-skills-section">
-      <h2 class="custom-heading">My <span>education</span></h2>
-      <div class="custom-main">
-        <!-- Custom Skill Item 1 -->
-        <div class="custom-skill-item">
-          <div class="custom-card">
-            <img src="./images/C2.JPG" alt="HTML">
-          </div>
-          <div class="texto-descripcion">
-            <p>Projects on Ruby on Rails and React responsive interfaces SCSS, Bootstrap .Managed PostgreSQL with Active Record, authentication using Devise and Pundit. Integrated APIs, AJAX, Hotwire, Geocoding, Chatbot AI integration and deployed applications via Git and Heroku.</p>
-          </div>
-        </div>
 
-        <!-- Custom Skill Item 2 -->
-        <div class="custom-skill-item">
-          <div class="custom-card">
-            <img src="./images/C3.JPG" alt="CSS">
-          </div>
-          <div class="texto-descripcion">
-            <p>Training in JavaScript, Python, SQL, Postman, and Flask also developed dynamic web applications, managed, and queried databases, and integrated APIs using Postman. Built backend services with Flask.</p>
-          </div>
-        </div>
-
-        <!-- Custom Skill Item 3 -->
-        <div class="custom-skill-item">
-          <div class="custom-card">
-            <img src="./images/C5.JPG" alt="JavaScript">
-          </div>
-          <div class="texto-descripcion">
-            <p>Proficient in Python for deep and machine learning projects, utilizing Jupyter, OpenCV, NumPy, Pandas, and various Python libraries for data analysis and model development.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Pie de página -->
     <footer class="footer">
