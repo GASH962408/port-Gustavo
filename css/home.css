@@ -186,6 +186,11 @@
   transform: rotate(45deg) translate(24.5rem) rotate(-45deg); /* Compensa la rotación */
 }
 
+.point2 .icon {
+  width: 5rem; /* Cambia el tamaño según sea necesario */
+  height: 5rem; /* Cambia el tamaño según sea necesario */
+}
+
 .point3 {
   transform: rotate(90deg) translate(24.5rem) rotate(-90deg); /* Compensa la rotación */
 }
