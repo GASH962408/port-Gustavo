@@ -1,0 +1,21 @@
+<!-- components/header.html -->
+<header class="header">
+  <a href="#" class="logo"><i class='bx bx-briefcase'></i> My portfolio.</a>
+  <div class='bx bx-menu' id="menu-icon" aria-label="Menú de navegación"></div>
+  <nav class="navbar">
+      <a href="#home" class="active"><i class='bx bx-home'></i> Home</a>
+      <a href="#about"><i class='bx bx-user'></i> About me</a>
+      <a href="#portfolio"><i class='bx bx-file'></i> Resume</a>
+      <a href="#contact"><i class='bx bx-envelope'></i> Contact</a>
+  </nav>
+</header>
+
+<!-- Menú Responsivo -->
+<script>
+  const menuIcon = document.getElementById('menu-icon');
+  const navbar = document.querySelector('.navbar');
+
+  menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+  });
+</script>

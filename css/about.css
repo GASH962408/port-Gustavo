@@ -1,0 +1,127 @@
+/* css/about.css */
+
+/* Estilos de la sección About */
+.about {
+  padding: 4rem 0;
+  background: var(--second-bg-color);
+  display: flex;
+  min-height: 97vh;
+  align-items: center;
+}
+
+.heading {
+  text-align: start;
+  font-size: 4rem;
+  margin-left: 10.5rem;
+  color: var(--text-color);
+}
+
+.heading-2 {
+  text-align: end;
+  font-size: 3.0rem;
+  margin-left: 19.5rem;
+  margin-top: -4.0rem;
+  margin-bottom:2.5rem;
+  color: var(--text-color);
+}
+
+.heading-3 {
+  font-size: 3.0rem;
+  margin-top: 2rem;
+  color: var(--text-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-md-8 {
+  width: 60%;
+}
+
+.col-md-4 {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.text-container {
+  max-width: 1000px;
+  padding: 0 2rem;
+  line-height: 1.8;
+  font-size: 1.8rem;
+  margin-left: 6cqi;
+  margin-top: 2rem;
+  text-align: justify;
+}
+
+.languages-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.language-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.flag-icon {
+  width: 48px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.language-name {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.language-level {
+  font-size: 1.6rem;
+  color: #0ef;
+  margin-top: 0.3rem;
+}
+
+.custom-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.cover {
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .languages-list {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .language-item {
+      flex-direction: row;
+      text-align: left;
+  }
+
+  .flag-icon {
+      margin-right: 1rem;
+      margin-bottom: 0;
+  }
+}
